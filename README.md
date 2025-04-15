@@ -33,7 +33,7 @@ This project is developed as part of the SE4458 Software Architecture & Design o
 JWT authentication is implemented.
 
 - You must first call `/api/v1/Auth/login` with valid credentials.
-- Use the token in Authorization header as `Bearer {token}`.
+- Use the token in Authorization header as `{token}`.
 
 ---
 
