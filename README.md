@@ -38,7 +38,7 @@ JWT authentication is implemented.
 ---
 
 ## 📦 Project Structure
-
+```
 AirlaneTicketingSystem/
 │
 ├── 📁 Controllers/              # API uç noktaları
@@ -77,7 +77,7 @@ AirlaneTicketingSystem/
 ├── AirlaneTicketingSystem.http # Test amaçlı HTTP istekleri
 ├── appsettings.json            # JWT, Connection String config
 └── Program.cs                  # .NET uygulama başlangıç dosyası
-
+```
 
 ---
 
