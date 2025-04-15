@@ -73,7 +73,8 @@ dotnet run
 
 ## 🗃️ Data Model (ER Diagram)
 
-- `docs/ERDiagram.png` contains the full entity relationship model.
+- ![ER Diagram](docs/ERDiagram.png)
+- contains the full entity relationship model.
 
 ---
 
