@@ -39,17 +39,45 @@ JWT authentication is implemented.
 
 ## 📦 Project Structure
 
-```
-AirlineTicketingSystem/
-├── Controllers/
-├── Services/
-├── Models/
-├── Data/
+AirlaneTicketingSystem/
+│
+├── 📁 Controllers/              # API uç noktaları
+│   ├── AuthController.cs        # Login işlemi (JWT)
+│   └── FlightController.cs      # Flight, Ticket, Check-in işlemleri
+│
+├── 📁 Data/                     # EF Core DbContext
 │   └── AirlineDbContext.cs
-├── Program.cs
-├── appsettings.json
-└── AirlineTicketingSystem.csproj
-```
+│
+├── 📁 Migrations/               # EF Core migration dosyaları
+│   ├── *initial*.cs
+│   ├── *_AzureInit.cs
+│   ├── *_AddCheckInAndSeatToTicket.cs
+│   ├── *_AddRoleToUser.cs
+│   ├── *_DeleteRoleToUser.cs
+│   └── AirlineDbContextModelSnapshot.cs
+│
+├── 📁 Models/                   # Entity ve DTO sınıfları
+│   ├── Flight.cs
+│   ├── Ticket.cs
+│   ├── User.cs
+│   ├── AddFlightDTO.cs
+│   ├── BuyTicketDTO.cs
+│   ├── CheckInDTO.cs
+│   ├── CheckInResultDTO.cs
+│   ├── FlightQueryDTO.cs
+│   ├── LoginRequestDTO.cs
+│   ├── PassengerInfoDTO.cs
+│   └── PassengerQueryDTO.cs
+│
+├── 📁 Services/                 # Business logic servisleri
+│   ├── FlightService.cs
+│   ├── IFlightService.cs
+│   └── JwtService.cs
+│
+├── AirlaneTicketingSystem.http # Test amaçlı HTTP istekleri
+├── appsettings.json            # JWT, Connection String config
+└── Program.cs                  # .NET uygulama başlangıç dosyası
+
 
 ---
 
