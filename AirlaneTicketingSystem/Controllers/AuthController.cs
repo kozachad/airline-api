@@ -1,27 +1,27 @@
-﻿using AirlaneTicketingSystem.Models;
+﻿using AirlaneTicketingSystem.Data;
+using AirlaneTicketingSystem.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 [ApiController]
 [Route("api/v1/[controller]")]
 public class AuthController : ControllerBase
 {
     private readonly JwtService _jwtService;
+    private readonly AirlineDbContext _context;
 
-    private readonly List<User> _users = new()
-    {
-        new User { Id = 1, Username = "admin", Password = "1234" },
-        new User { Id = 2, Username = "user", Password = "1234" }
-    };
-
-    public AuthController(JwtService jwtService)
+    public AuthController(JwtService jwtService, AirlineDbContext context)
     {
         _jwtService = jwtService;
+        _context = context;
     }
 
     [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginRequestDTO request)
+    public async Task<IActionResult> Login([FromBody] LoginRequestDTO request)
     {
-        var user = _users.FirstOrDefault(u => u.Username == request.Username && u.Password == request.Password);
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.Username == request.Username && u.Password == request.Password);
+
         if (user == null)
             return Unauthorized("Invalid credentials");
 
