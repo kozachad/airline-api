@@ -110,7 +110,7 @@ dotnet run
 
 A short demo of the project is available at:
 
-> 🔗 [Google Drive / YouTube Video Link Here]
+> 🔗 [Demo Video](https://drive.google.com/your-video-link)
 
 ---
 
